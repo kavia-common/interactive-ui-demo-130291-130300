@@ -1,0 +1,25 @@
+body { background: var(--color-f8f9fe); }
+
+/* Adjust messages alignment to left/right similar to chat bubble positions */
+.messages .bubble.received { justify-self: start; }
+.messages .bubble.sent { justify-self: end; }
+
+/* Slight variant paddings to approximate the Figma y positions */
+.phone .messages .bubble:nth-child(1) { margin-top: 24px; }
+.phone .messages .bubble:nth-child(2) { margin-top: 8px; }
+.phone .messages .bubble:nth-child(3) { margin-top: 8px; }
+.phone .messages .bubble:nth-child(4) { margin-top: 8px; }
+
+/* List scroll region height based on grid rows excluding bars and tabs */
+.list-area .list-scroll { height: calc(812px - 44px - 56px - 44px - 88px - 34px); }
+
+/* Ensure inputs text styles */
+.input input::placeholder {
+  color: var(--color-8f9098);
+}
+
+/* Accessibility focus */
+button:focus, .input input:focus {
+  outline: 2px solid var(--color-006ffd);
+  outline-offset: 2px;
+}

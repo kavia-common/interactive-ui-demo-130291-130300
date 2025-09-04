@@ -1,0 +1,341 @@
+:root {
+  /* Color tokens */
+  --color-f8f9fe: #f8f9fe;
+  --color-ffffff: #ffffff;
+  --color-006ffd: #006ffd;
+  --color-1f2024: #1f2024;
+  --color-71727a: #71727a;
+  --color-e8e9f1: #e8e9f1;
+  --color-8f9098: #8f9098;
+  --color-000000: #000000;
+  --color-eaf2ff: #eaf2ff;
+  --color-b4dbff: #b4dbff;
+  --color-494a50: #494a50;
+  --color-2f3036: #2f3036;
+  --color-d4d6dd: #d4d6dd;
+  --color-c5c6cc: #c5c6cc;
+  --color-1f1f1f: #1f1f1f;
+  --color-fe9213: #fe9213;
+  --color-f8f8f8: #f8f8f8;
+  --color-d9d9d9: #d9d9d9;
+  --color-6fbaff: #6fbaff;
+  --color-3ac0a0: #3ac0a0;
+  --color-ed3241: #ed3241;
+  --color-ff616d: #ff616d;
+  --color-f5f6fa: #f5f6fa;
+  --color-e7f4e8: #e7f4e8;
+  --color-fff4e4: #fff4e4;
+  --color-ffb37c: #ffb37c;
+  --color-ffe2e5: #ffe2e5;
+  --color-2897ff: #2897ff;
+  --color-298267: #298267;
+  --color-e86339: #e86339;
+
+  /* Typography tokens (subset used in this screen) */
+  --font-inter: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-sfpro: "SF Pro Text", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+
+  --typo-66-size: 8px; --typo-66-weight: 600; --typo-66-line: 9.68px; --typo-66-letter: 0.8px; --typo-66-color: var(--color-8f9098);
+  --typo-67-size: 24px; --typo-67-weight: 900; --typo-67-line: 29.045px; --typo-67-letter: 0.24px; --typo-67-color: var(--color-1f2024);
+
+  --typo-75-size: 15px; --typo-75-weight: 600; --typo-75-line: 17.9px; --typo-75-color: var(--color-1f2024);
+  --typo-76-size: 17px; --typo-76-weight: 400; --typo-76-line: 20.287px; --typo-76-color: var(--color-1f2024);
+  --typo-77-size: 14px; --typo-77-weight: 400; --typo-77-line: 16.707px; --typo-77-color: var(--color-1f2024);
+
+  --typo-79-size: 12px; --typo-79-weight: 400; --typo-79-line: 16px; --typo-79-color: var(--color-71727a);
+  --typo-81-size: 12px; --typo-81-weight: 700; --typo-81-color: var(--color-71727a);
+  --typo-82-size: 14px; --typo-82-weight: 400; --typo-82-line: 20px; --typo-82-color: var(--color-1f2024);
+  --typo-84-size: 12px; --typo-84-weight: 700; --typo-84-color: var(--color-1f2024);
+  --typo-86-size: 14px; --typo-86-weight: 700; --typo-86-line: 16.94px; --typo-86-color: var(--color-1f2024);
+  --typo-94-size: 14px; --typo-94-weight: 400; --typo-94-line: 20px; --typo-94-color: var(--color-ffffff);
+  --typo-95-size: 12px; --typo-95-weight: 700; --typo-95-color: var(--color-b4dbff);
+  --typo-97-size: 16px; --typo-97-weight: 400; --typo-97-line: 19.09px; --typo-97-color: var(--color-1f2024);
+  --typo-99-size: 14px; --typo-99-weight: 400; --typo-99-line: 20px; --typo-99-color: var(--color-8f9098);
+
+  /* Radius tokens (subset used) */
+  --radius-20: 20px;
+  --radius-24: 24px;
+  --radius-26: 26px;
+  --radius-38: 38px;
+  --radius-40: 40px;
+  --radius-45: 45px; /* approx for 44/45 */
+  --radius-71: 71px;
+
+  /* Shadow tokens (simplified) */
+  --shadow-10: 0 1px 0 rgba(0,0,0,1);
+  --shadow-15: -1px 2px 6px rgba(0,0,0,1);
+
+  /* Spacing scale (selected) */
+  --space-4: 4px;
+  --space-6: 6px;
+  --space-8: 8px;
+  --space-10: 10px;
+  --space-12: 12px;
+  --space-14: 14px;
+  --space-16: 16px;
+  --space-20: 20px;
+  --space-24: 24px;
+  --space-32: 32px;
+  --space-40: 40px;
+  --space-44: 44px;
+  --space-56: 56px;
+  --space-72: 72px;
+  --space-88: 88px;
+
+  /* Screen background */
+  --screen-bg: var(--color-f8f9fe);
+}
+
+/* Base resets */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { background: var(--screen-bg); font-family: var(--font-inter); color: var(--color-1f2024); }
+
+/* Utilities */
+.visually-hidden { position: absolute !important; width: 1px; height: 1px; overflow: hidden; clip: rect(1px,1px,1px,1px); white-space: nowrap; }
+
+/* iOS bars (status/home) simplified visual representations */
+.status-bar {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-16);
+  background: var(--color-ffffff);
+  border-bottom: 1px solid var(--color-e8e9f1);
+  font-family: var(--font-sfpro);
+}
+.status-bar .time { font-size: var(--typo-75-size); font-weight: var(--typo-75-weight); color: var(--typo-75-color); }
+.status-bar .indicators { display: flex; gap: var(--space-8); font-size: var(--typo-77-size); color: var(--typo-77-color); }
+
+.nav-bar {
+  height: 56px;
+  display: grid;
+  grid-template-columns: 56px 1fr 56px;
+  align-items: center;
+  padding: 0 var(--space-8);
+  background: var(--color-ffffff);
+  border-bottom: 1px solid var(--color-e8e9f1);
+}
+.nav-bar .title {
+  justify-self: center;
+  font-size: var(--typo-86-size);
+  font-weight: var(--typo-86-weight);
+  line-height: var(--typo-86-line);
+  color: var(--typo-86-color);
+}
+.nav-btn {
+  width: 40px; height: 40px; border-radius: 20px;
+  display: grid; place-items: center;
+  background: var(--color-eaf2ff);
+  justify-self: start;
+  margin-left: var(--space-8);
+}
+.nav-right-cta { justify-self: end; margin-right: var(--space-8); }
+
+/* Home indicator */
+.home-indicator-wrap {
+  height: 34px; display: grid; place-items: center; background: transparent;
+}
+.home-indicator {
+  width: 134px; height: 5px; border-radius: 100px; background: var(--color-1f2024);
+  opacity: 1;
+}
+
+/* Tab bar */
+.tab-bar {
+  height: 88px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  background: var(--color-ffffff);
+  border-top: 1px solid var(--color-e8e9f1);
+}
+.tab {
+  display: grid; justify-items: center; gap: 8px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+.tab .icon {
+  width: 20px; height: 20px; border-radius: 4px;
+  background: var(--color-006ffd);
+}
+.tab .label {
+  font-size: 10px; font-weight: 600; line-height: 12.1px; color: var(--color-1f2024);
+}
+.tab.inactive .icon { background: var(--color-c5c6cc); }
+.tab.inactive .label { color: var(--color-71727a); }
+
+/* Search bar */
+.search-bar {
+  margin: var(--space-16) auto;
+  width: 343px; height: 44px; border-radius: 24px; background: var(--color-f8f9fe);
+  display: grid; grid-template-columns: 44px 1fr; align-items: center;
+}
+.search-bar .search-icon {
+  width: 16px; height: 16px; justify-self: center; border-radius: 4px; background: var(--color-2f3036);
+}
+.search-bar input {
+  border: none; outline: none; background: transparent;
+  font-size: var(--typo-99-size); color: var(--typo-99-color);
+}
+
+/* Chat list item */
+.chat-item {
+  width: 359px;
+  min-height: 72px;
+  padding: var(--space-8);
+  display: grid;
+  grid-template-columns: 48px 1fr auto;
+  align-items: center;
+  gap: var(--space-12);
+}
+.chat-item .avatar {
+  width: 40px; height: 40px; border-radius: 16px; background: var(--color-eaf2ff);
+}
+.chat-item .content {
+  display: grid; gap: 4px;
+}
+.chat-item .content .name {
+  font-size: var(--typo-84-size);
+  font-weight: var(--typo-84-weight);
+  color: var(--typo-84-color);
+}
+.chat-item .content .desc {
+  font-size: var(--typo-79-size);
+  line-height: var(--typo-79-line);
+  color: var(--typo-79-color);
+}
+.chat-item .badge {
+  width: 24px; height: 24px; border-radius: 20px;
+  background: var(--color-006ffd);
+  color: var(--color-ffffff);
+  display: grid; place-items: center;
+  font-size: 10px; font-weight: 600;
+}
+
+/* Message area layout (conversation) */
+.phone {
+  width: 375px; height: 812px;
+  border-radius: 26px;
+  overflow: hidden;
+  background: var(--color-ffffff);
+  border: 1px solid var(--color-e8e9f1);
+  display: grid;
+  grid-template-rows: 44px 56px 1fr auto 34px;
+}
+
+/* Message bubbles */
+.messages {
+  padding: var(--space-16);
+  display: grid;
+  gap: var(--space-12);
+  align-content: start;
+  background: var(--color-ffffff);
+}
+.bubble {
+  max-width: 251px;
+  padding: 10px 12px;
+  border-radius: var(--radius-20);
+  font-size: var(--typo-82-size);
+  line-height: var(--typo-82-line);
+}
+.bubble.received {
+  background: var(--color-f8f9fe);
+  color: var(--color-1f2024);
+}
+.bubble.received.tip { /* Tip on variation visual hint */ }
+.bubble.sent {
+  background: var(--color-006ffd);
+  color: var(--color-ffffff);
+}
+.bubble .name {
+  display: block;
+  margin-bottom: 4px;
+  font-size: var(--typo-81-size);
+  font-weight: var(--typo-81-weight);
+  color: var(--color-71727a);
+}
+.bubble.sent .name { color: var(--color-b4dbff); font-weight: 700; }
+
+/* Input area */
+.input-wrap {
+  height: 72px;
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  background: var(--color-ffffff);
+  padding-bottom: var(--space-8);
+}
+.input {
+  width: 343px; height: 40px; border-radius: 71px; background: var(--color-f8f9fe);
+  display: grid; grid-template-columns: 40px 1fr 40px; align-items: center;
+}
+.input .add {
+  width: 16px; height: 16px; border-radius: 4px; background: var(--color-006ffd);
+  justify-self: center;
+}
+.input input {
+  border: none; outline: none; background: transparent;
+  font-size: var(--typo-82-size); color: var(--typo-82-color);
+}
+.input .send {
+  width: 32px; height: 32px; border-radius: 38px; background: var(--color-006ffd);
+  justify-self: center;
+}
+
+/* Grid for the whole screen that shows two chat examples and the list */
+.screen-wrap {
+  max-width: 1339px;
+  margin: 0 auto;
+  padding: var(--space-24);
+  display: grid;
+  grid-template-columns: repeat(3, 375px);
+  gap: var(--space-24);
+  justify-content: center;
+}
+
+/* Header (Templates / Chat) */
+.header {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  padding: var(--space-16) 0;
+}
+.header .icon {
+  width: 48px; height: 48px; border-radius: 16px; background: var(--color-e8e9f1);
+  display: grid; place-items: center;
+}
+.header .title-block .overline {
+  font-size: var(--typo-66-size); font-weight: var(--typo-66-weight);
+  letter-spacing: var(--typo-66-letter);
+  color: var(--typo-66-color);
+}
+.header .title-block .page-title {
+  font-size: var(--typo-67-size); font-weight: var(--typo-67-weight);
+  letter-spacing: var(--typo-67-letter);
+  line-height: var(--typo-67-line);
+  color: var(--typo-67-color);
+}
+
+/* Chats list container phone */
+.list-area {
+  width: 375px; height: 812px; border-radius: 26px; overflow: hidden;
+  background: var(--color-ffffff);
+  border: 1px solid var(--color-e8e9f1);
+  display: grid;
+  grid-template-rows: 44px 56px 44px 1fr 88px 34px;
+}
+.list-scroll {
+  padding: 0 var(--space-8);
+  overflow: auto;
+  display: grid;
+  gap: var(--space-8);
+  justify-items: center;
+}
+
+/* Scrollbar thin */
+.list-scroll::-webkit-scrollbar { width: 6px; }
+.list-scroll::-webkit-scrollbar-thumb { background: var(--color-e8e9f1); border-radius: 3px; }
