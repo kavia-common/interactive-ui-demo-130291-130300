@@ -4,9 +4,10 @@ import "../../styles/common.css";
 /**
  * PUBLIC_INTERFACE
  * EcommerceShowcase
- * A combined "template" section that mirrors the extracted HTML layout rows:
+ * A combined "template" section that mirrors the extracted layout:
  * - Title/header "Templates / E-commerce"
- * - Renders three artboards side-by-side via passed children
+ * - Renders a single active artboard (screen) via its child content
+ * Consumers should pass only the active screen as children.
  */
 export default function EcommerceShowcase({ children }) {
   return (

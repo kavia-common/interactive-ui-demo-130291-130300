@@ -168,33 +168,38 @@ function App() {
       case 'ecommerce':
         return (
           <EcommerceShowcase>
+            {/* Lightweight in-showcase back control to dashboard */}
+            <div style={{ gridColumn: '1 / -1', display: 'flex', justifyContent: 'flex-start' }}>
+              <button
+                type="button"
+                onClick={() => setView('dashboard')}
+                style={{
+                  padding: '8px 12px',
+                  borderRadius: 8,
+                  border: '1px solid var(--border-color, #e0e0e0)',
+                  background: '#fff',
+                  cursor: 'pointer',
+                  marginBottom: 12
+                }}
+              >
+                ← Back to Dashboard
+              </button>
+            </div>
+
             {ecomView === 'home' && (
-              <>
-                <Home onOpenProduct={openProduct} onOpenCart={openCart} />
-                <ProductPage product={selectedProduct} onAddToBag={addToBag} onBack={backFromProduct} />
-                <Cart initialItems={cartItems} onBack={backFromCart} onCheckout={proceedCheckout} />
-              </>
+              <Home onOpenProduct={openProduct} onOpenCart={openCart} />
             )}
+
             {ecomView === 'product' && (
-              <>
-                <Home onOpenProduct={openProduct} onOpenCart={openCart} />
-                <ProductPage product={selectedProduct} onAddToBag={addToBag} onBack={backFromProduct} />
-                <Cart initialItems={cartItems} onBack={backFromCart} onCheckout={proceedCheckout} />
-              </>
+              <ProductPage product={selectedProduct} onAddToBag={addToBag} onBack={backFromProduct} />
             )}
+
             {ecomView === 'cart' && (
-              <>
-                <Home onOpenProduct={openProduct} onOpenCart={openCart} />
-                <Cart initialItems={cartItems} onBack={backFromCart} onCheckout={proceedCheckout} />
-                <Checkout onBack={backFromCheckout} onContinue={() => setEcomView('home')} />
-              </>
+              <Cart initialItems={cartItems} onBack={backFromCart} onCheckout={proceedCheckout} />
             )}
+
             {ecomView === 'checkout' && (
-              <>
-                <Home onOpenProduct={openProduct} onOpenCart={openCart} />
-                <Cart initialItems={cartItems} onBack={backFromCart} onCheckout={proceedCheckout} />
-                <Checkout onBack={backFromCheckout} onContinue={() => setEcomView('home')} />
-              </>
+              <Checkout onBack={backFromCheckout} onContinue={() => setEcomView('home')} />
             )}
           </EcommerceShowcase>
         );
