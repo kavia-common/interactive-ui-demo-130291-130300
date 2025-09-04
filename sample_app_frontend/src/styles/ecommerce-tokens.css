@@ -1,0 +1,245 @@
+:root {
+  /* Color tokens from design system */
+  --color-f8f9fe: #f8f9fe;
+  --color-ffffff: #ffffff;
+  --color-006ffd: #006ffd;
+  --color-1f2024: #1f2024;
+  --color-71727a: #71727a;
+  --color-e8e9f1: #e8e9f1;
+  --color-8f9098: #8f9098;
+  --color-000000: #000000;
+  --color-eaf2ff: #eaf2ff;
+  --color-b4dbff: #b4dbff;
+  --color-494a50: #494a50;
+  --color-2f3036: #2f3036;
+  --color-d4d6dd: #d4d6dd;
+  --color-c5c6cc: #c5c6cc;
+  --color-1f1f1f: #1f1f1f;
+
+  /* Typography tokens used */
+  --font-inter: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  --font-sfpro: "SF Pro Text", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+
+  /* Common text styles */
+  --typo-66-size: 0.5rem; --typo-66-weight: 600; --typo-66-line: 0.6rem; --typo-66-letter: 0.05rem; --typo-66-color: var(--color-8f9098);
+  --typo-67-size: clamp(1.25rem, 1.2rem + 0.5vw, 1.5rem); --typo-67-weight: 900; --typo-67-line: 1.8rem; --typo-67-letter: 0.015rem; --typo-67-color: var(--color-1f2024);
+
+  --typo-68-size: 0.875rem; --typo-68-weight: 700; --typo-68-line: 1.05rem; --typo-68-color: var(--color-000000);
+  --typo-69-size: 0.75rem; --typo-69-weight: 600; --typo-69-line: 0.9rem; --typo-69-color: var(--color-006ffd);
+  --typo-70-size: 0.75rem; --typo-70-weight: 400; --typo-70-line: 1rem; --typo-70-color: var(--color-1f2024);
+  --typo-71-size: 0.875rem; --typo-71-weight: 700; --typo-71-line: 1.05rem; --typo-71-color: var(--color-1f2024);
+  --typo-72-size: 0.625rem; --typo-72-weight: 600; --typo-72-color: var(--color-ffffff);
+  --typo-73-size: 0.625rem; --typo-73-weight: 600; --typo-73-color: var(--color-1f2024);
+  --typo-74-size: 0.625rem; --typo-74-weight: 400; --typo-74-line: 0.875rem; --typo-74-color: var(--color-71727a);
+  --typo-75-size: 0.95rem; --typo-75-weight: 600; --typo-75-color: var(--color-1f2024);
+  --typo-78-size: 1rem; --typo-78-weight: 800; --typo-78-color: var(--color-1f2024);
+  --typo-79-size: 0.75rem; --typo-79-weight: 400; --typo-79-line: 1rem; --typo-79-color: var(--color-71727a);
+  --typo-80-size: 0.75rem; --typo-80-weight: 600; --typo-80-color: var(--color-ffffff);
+  --typo-81-size: 0.75rem; --typo-81-weight: 700; --typo-81-color: var(--color-71727a);
+  --typo-82-size: 0.875rem; --typo-82-weight: 400; --typo-82-line: 1.25rem; --typo-82-color: var(--color-1f2024);
+  --typo-83-size: 0.75rem; --typo-83-weight: 700; --typo-83-color: var(--color-8f9098);
+  --typo-84-size: 0.75rem; --typo-84-weight: 700; --typo-84-color: var(--color-1f2024);
+  --typo-86-size: 0.875rem; --typo-86-weight: 700; --typo-86-line: 1.05rem; --typo-86-color: var(--color-1f2024);
+  --typo-87-size: 0.875rem; --typo-87-weight: 400; --typo-87-line: 1.25rem; --typo-87-color: var(--color-1f2024);
+  --typo-88-size: 0.875rem; --typo-88-weight: 400; --typo-88-line: 1.25rem; --typo-88-color: var(--color-71727a);
+  --typo-89-size: 1.125rem; --typo-89-weight: 800; --typo-89-color: var(--color-1f2024);
+  --typo-90-size: 1rem; --typo-90-weight: 400; --typo-90-color: var(--color-1f2024);
+
+  /* Spacing shortcuts */
+  --space-8: 0.5rem;
+  --space-12: 0.75rem;
+  --space-16: 1rem;
+  --space-20: 1.25rem;
+  --space-24: 1.5rem;
+
+  /* Radii */
+  --radius-12: 12px;
+  --radius-16: 16px;
+  --radius-24: 24px;
+  --radius-26: 26px;
+  --radius-32: 32px;
+
+  /* Generic */
+  --screen-bg: var(--color-f8f9fe);
+}
+
+/* Core phone/frame and shared UI pieces */
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; }
+body { background: var(--screen-bg); color: var(--color-1f2024); font-family: var(--font-inter); }
+
+/* Make phone container fluid with a max-width, preserving aspect on mobile */
+.phone {
+  width: 100%;
+  max-width: 375px;
+  height: auto;
+  min-height: 600px;
+  background: var(--color-ffffff);
+  border: 1px solid var(--color-e8e9f1);
+  border-radius: var(--radius-26);
+  overflow: hidden;
+  display: grid;
+  grid-auto-rows: min-content;
+}
+
+/* Bars */
+.status-bar {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 var(--space-16);
+  background: var(--color-ffffff);
+  border-bottom: 1px solid var(--color-e8e9f1);
+  font-family: var(--font-sfpro);
+}
+.status-bar .time { font-size: var(--typo-75-size); font-weight: var(--typo-75-weight); color: var(--color-1f2024); }
+.status-bar .indicators { display: flex; gap: var(--space-8); color: var(--color-1f2024); font-size: 0.75rem; }
+.nav-bar {
+  min-height: 56px;
+  display: grid;
+  grid-template-columns: 56px 1fr 56px;
+  align-items: center;
+  padding: 0 var(--space-8);
+  background: var(--color-ffffff);
+  border-bottom: 1px solid var(--color-e8e9f1);
+}
+.nav-bar .title {
+  justify-self: center;
+  font-size: var(--typo-86-size);
+  font-weight: var(--typo-86-weight);
+  line-height: var(--typo-86-line);
+  color: var(--typo-86-color);
+}
+.nav-btn {
+  width: 40px; height: 40px; border-radius: 20px;
+  display: grid; place-items: center;
+  background: var(--color-eaf2ff);
+  justify-self: start;
+  margin-left: var(--space-8);
+  border: none;
+}
+
+/* Template header */
+.header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+  padding: var(--space-16) var(--space-16) 0 var(--space-16);
+}
+.header .icon {
+  width: 48px; height: 48px; border-radius: 16px; background: var(--color-e8e9f1);
+  display: grid; place-items: center;
+}
+.header .overline {
+  font-size: var(--typo-66-size); font-weight: var(--typo-66-weight); letter-spacing: var(--typo-66-letter); color: var(--typo-66-color);
+}
+.header .page-title {
+  font-size: var(--typo-67-size); font-weight: var(--typo-67-weight); letter-spacing: var(--typo-67-letter); line-height: var(--typo-67-line); color: var(--typo-67-color);
+}
+
+/* Components */
+.pagination-dots { display: grid; grid-auto-flow: column; gap: 0.5rem; }
+.pagination-dots .dot { width: 8px; height: 8px; border-radius: 24px; background: rgba(31,32,36,0.1); }
+.pagination-dots .dot.active { background: var(--color-006ffd); }
+
+.section-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0;
+}
+.section-header .title { font-size: var(--typo-68-size); font-weight: var(--typo-68-weight); color: var(--typo-68-color); }
+.section-header .see-more { font-size: var(--typo-69-size); font-weight: var(--typo-69-weight); color: var(--typo-69-color); }
+
+.product-card {
+  width: clamp(160px, 44vw, 200px);
+  height: auto;
+  background: var(--color-f8f9fe);
+  border-radius: var(--radius-16);
+  overflow: hidden;
+  display: grid;
+  grid-template-rows: 120px 1fr;
+}
+.product-card .image { background: var(--color-eaf2ff); display: grid; place-items: center; }
+.product-card .content { padding: 0.5rem 1rem; display: grid; align-content: center; }
+.product-card .name { font-size: var(--typo-70-size); font-weight: var(--typo-70-weight); color: var(--typo-70-color); }
+.product-card .price { font-size: var(--typo-71-size); font-weight: var(--typo-71-weight); color: var(--typo-71-color); }
+
+.btn-primary {
+  height: 48px; border-radius: var(--radius-12);
+  background: var(--color-006ffd); color: var(--color-ffffff);
+  border: none; font-size: var(--typo-80-size); font-weight: var(--typo-80-weight);
+  display: grid; place-items: center; cursor: pointer;
+}
+
+.badge {
+  min-width: 18px; height: 18px; padding: 0 4px;
+  border-radius: 20px; background: var(--color-006ffd);
+  color: var(--color-ffffff); display: grid; place-items: center;
+  font-size: var(--typo-72-size); font-weight: var(--typo-72-weight);
+}
+
+.list-item {
+  min-height: 60px; border-radius: 12px; display: grid; align-items: center; padding: 0 16px; background: var(--color-eaf2ff);
+}
+.list-item .title { font-size: var(--typo-82-size); line-height: var(--typo-82-line); color: var(--typo-82-color); }
+.list-item .desc { font-size: var(--typo-79-size); line-height: var(--typo-79-line); color: var(--typo-79-color); }
+
+.radio { width: 16px; height: 16px; border-radius: 500px; border: 1.5px solid var(--color-c5c6cc); display: grid; place-items: center; }
+.radio.selected { border-color: var(--color-006ffd); }
+.radio.selected::after { content: ""; width: 6px; height: 6px; border-radius: 500px; background: var(--color-006ffd); }
+
+.checkbox { width: 16px; height: 16px; border-radius: 4px; border: 1.5px solid var(--color-006ffd); background: var(--color-006ffd); display: grid; place-items: center; }
+.checkbox .tick { width: 10px; height: 10px; background: var(--color-ffffff); clip-path: polygon(14% 52%, 0 66%, 36% 100%, 100% 24%, 85% 10%, 36% 76%); }
+
+.cart-item {
+  width: 100%;
+  max-width: 327px;
+  min-height: 88px;
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 1rem;
+  align-items: center;
+}
+.cart-item .thumb { width: 90px; height: 100px; background: var(--color-eaf2ff); border-radius: var(--radius-16); display: grid; place-items: center; }
+.cart-item .meta { display: grid; gap: 8px; }
+.cart-item .meta .name { font-size: var(--typo-84-size); font-weight: var(--typo-84-weight); color: var(--typo-84-color); }
+.cart-item .meta .details { font-size: var(--typo-79-size); color: var(--typo-79-color); }
+.cart-item .row { display: flex; align-items: center; justify-content: space-between; }
+
+.quantity {
+  height: 32px; width: 90px; border-radius: 32px; background: transparent; display: grid; grid-template-columns: 24px 1fr 24px; align-items: center;
+}
+.quantity .btn { width: 24px; height: 24px; background: var(--color-eaf2ff); border-radius: 26px; display: grid; place-items: center; cursor: pointer; border: none; }
+.quantity .value { text-align: center; font-size: var(--typo-87-size); color: var(--typo-87-color); }
+.price { font-size: var(--typo-71-size); font-weight: var(--typo-71-weight); color: var(--typo-71-color); }
+
+.block-icon { width: 16px; height: 16px; border-radius: 4px; background: var(--color-006ffd); }
+
+/* Responsive screen container grid */
+.screen-grid {
+  width: 100%;
+  max-width: 1339px;
+  margin: 0 auto;
+  padding: var(--space-24);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-24);
+  justify-content: center;
+}
+.screen-grid .screen-title { grid-column: 1 / -1; }
+
+/* Tablet: two columns of phones */
+@media (min-width: 768px) {
+  .screen-grid {
+    grid-template-columns: repeat(2, minmax(280px, 375px));
+  }
+}
+
+/* Desktop: three columns as original */
+@media (min-width: 1200px) {
+  .screen-grid {
+    grid-template-columns: repeat(3, minmax(280px, 375px));
+  }
+}

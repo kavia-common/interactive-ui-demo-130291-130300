@@ -1,0 +1,218 @@
+@import url("./common.css");
+
+/* Mobile-first: phones stack and fill container fluidly */
+.home .phone {
+  grid-template-rows: min-content min-content auto min-content;
+}
+.home .topbar {
+  display: grid;
+  grid-template-columns: 56px 1fr 56px;
+  align-items: center;
+  min-height: 64px;
+  padding: 0 var(--space-16);
+  border-bottom: 1px solid var(--color-e8e9f1);
+  background: var(--color-ffffff);
+}
+.home .topbar .left { display: grid; place-items: center; }
+.home .topbar .right { display: grid; grid-auto-flow: column; gap: 1rem; justify-content: end; }
+.home .badge-wrap { position: relative; }
+.home .badge-wrap .badge {
+  position: absolute; top: -6px; right: -6px; min-width: 18px; height: 18px;
+}
+.home .feed {
+  overflow: auto;
+  display: grid;
+  gap: var(--space-16);
+  padding-bottom: var(--space-16);
+}
+.home .banner {
+  width: 100%;
+  min-height: 180px;
+  background: var(--color-ffffff);
+  display: grid; align-content: end; justify-items: center;
+}
+.home .banner .image {
+  width: 100%; min-height: 180px; background: var(--color-eaf2ff);
+  display: grid; place-items: center;
+}
+.home .section {
+  width: 100%;
+  display: grid; justify-items: center; gap: var(--space-12);
+}
+.home .section .inner {
+  width: 100%;
+  max-width: 343px;
+  display: grid; gap: var(--space-12);
+}
+.home .section .cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: var(--space-12);
+}
+.home .section.summer { margin-bottom: var(--space-16); }
+.home .tabbar {
+  min-height: 72px; border-top: 1px solid var(--color-e8e9f1); background: var(--color-ffffff);
+  display: grid; grid-template-columns: repeat(4, 1fr); align-items: center;
+}
+.home .tabbar .tab {
+  display: grid; justify-items: center; gap: 6px; cursor: pointer; background: transparent; border: none;
+}
+.home .tabbar .tab .label {
+  font-size: var(--typo-74-size); color: var(--typo-74-color);
+}
+.home .tabbar .tab.active .label {
+  font-size: var(--typo-73-size); color: var(--typo-73-color); font-weight: var(--typo-73-weight);
+}
+
+/* Product page */
+.product-page .phone {
+  grid-template-rows: minmax(220px, 40vh) auto;
+}
+.product-page .photo {
+  background: var(--color-eaf2ff);
+  display: grid; place-items: center;
+}
+.product-page .details {
+  background: var(--color-ffffff);
+  display: grid; gap: var(--space-16);
+  padding: 16px;
+  overflow: auto;
+}
+.product-page .title-price {
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+}
+.product-page .prod-title { display: grid; gap: 6px; }
+.product-page .prod-title .name { font-size: var(--typo-89-size); font-weight: var(--typo-89-weight); color: var(--typo-89-color); }
+.product-page .prod-title .price { font-size: var(--typo-90-size); font-weight: var(--typo-90-weight); color: var(--typo-90-color); }
+.product-page .desc { font-size: var(--typo-79-size); color: var(--typo-79-color); line-height: var(--typo-79-line); }
+.product-page .options { display: grid; grid-template-columns: 1fr; gap: var(--space-16); }
+.product-page .opt-group { display: grid; gap: 8px; }
+.product-page .opt-label { font-size: var(--typo-84-size); font-weight: var(--typo-84-weight); color: var(--typo-84-color); }
+.product-page .tags { display: grid; grid-auto-flow: column; gap: 8px; }
+.product-page .tag {
+  height: 24px; padding: 0 10px; border-radius: 12px;
+  display: grid; place-items: center; background: var(--color-eaf2ff);
+  font-size: 10px; font-weight: 600; color: var(--color-006ffd);
+}
+.product-page .tag.focus { background: var(--color-006ffd); color: var(--color-ffffff); }
+.product-page .colors { display: grid; grid-auto-flow: column; gap: 16px; align-items: center; }
+.product-page .color { width: 32px; height: 32px; border-radius: 32px; background: var(--color-1f2024); }
+.product-page .color.gray { background: var(--color-c5c6cc); position: relative; }
+.product-page .color.gray .check {
+  position: absolute; right: -4px; top: -4px;
+  width: 16px; height: 16px; border-radius: 12px; background: var(--color-006ffd); border: 2px solid var(--color-ffffff);
+  display: grid; place-items: center;
+}
+.product-page .color.gray .check::after {
+  content: ""; width: 8px; height: 8px; background: var(--color-ffffff);
+  clip-path: polygon(14% 52%, 0 66%, 36% 100%, 100% 24%, 85% 10%, 36% 76%);
+}
+.product-page .cta { padding-bottom: 8px; }
+
+/* Cart */
+.cart .phone {
+  grid-template-rows: min-content min-content auto min-content;
+}
+.cart .nav-bar .title { font-size: var(--typo-86-size); font-weight: var(--typo-86-weight); }
+.cart .content {
+  display: grid; gap: var(--space-16);
+  padding: var(--space-16) 16px;
+  overflow: auto;
+  align-content: start;
+}
+.cart .divider {
+  height: 1px; background: var(--color-d4d6dd);
+  width: 100%; max-width: 327px; justify-self: center;
+}
+.cart .summary {
+  display: grid; gap: var(--space-12);
+  padding: 0 16px 16px 16px;
+}
+.cart .summary .row {
+  width: 100%; max-width: 327px; justify-self: center;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.cart .summary .row .label {
+  font-size: var(--typo-88-size); color: var(--typo-88-color);
+}
+.cart .summary .row .value {
+  font-size: var(--typo-78-size); font-weight: var(--typo-78-weight); color: var(--typo-78-color);
+}
+.cart .summary .cta {
+  width: 100%; max-width: 327px; justify-self: center;
+}
+
+/* Checkout */
+.checkout .phone {
+  grid-template-rows: min-content min-content auto min-content;
+}
+.checkout .stepper {
+  min-height: 72px; background: var(--color-ffffff);
+  display: grid; grid-template-columns: repeat(4, 1fr); align-items: center;
+  border-bottom: 1px solid var(--color-e8e9f1);
+  padding: 0 16px;
+}
+.checkout .step { display: grid; justify-items: center; gap: 6px; }
+.checkout .step .num.done { width: 24px; height: 24px; border-radius: 24px; background: var(--color-b4dbff); position: relative; }
+.checkout .step .num.done::after {
+  content: ""; position: absolute; left: 6px; top: 7px;
+  width: 10px; height: 8px; background: var(--color-006ffd);
+  clip-path: polygon(14% 52%, 0 66%, 36% 100%, 100% 24%, 85% 10%, 36% 76%);
+}
+.checkout .step .num.current { width: 24px; height: 24px; border-radius: 24px; background: var(--color-006ffd); }
+.checkout .step .num.pending { width: 24px; height: 24px; border-radius: 24px; background: var(--color-f8f9fe); border: 1px solid var(--color-e8e9f1); }
+.checkout .step .label { font-size: var(--typo-83-size); font-weight: var(--typo-83-weight); color: var(--typo-83-color); }
+
+.checkout .section-head { padding: 16px; display: grid; gap: 6px; }
+.checkout .section-head .title { font-size: var(--typo-78-size); font-weight: var(--typo-78-weight); color: var(--typo-78-color); }
+.checkout .section-head .desc { font-size: var(--typo-79-size); color: var(--typo-79-color); }
+
+.checkout .options { padding: 16px; display: grid; gap: var(--space-16); }
+.checkout .option-card {
+  border: 0.5px solid var(--color-d4d6dd);
+  border-radius: var(--radius-16);
+  padding: 16px;
+  display: grid; gap: 12px;
+}
+.checkout .option-card .row { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.checkout .option-card .cards { display: grid; gap: 8px; }
+
+.checkout .billing { display: flex; gap: 12px; align-items: center; }
+
+.checkout .bottom {
+  padding: 16px;
+  display: grid;
+}
+
+/* Responsive container for multiple screens */
+.screen-grid {
+  width: 100%;
+  max-width: 1339px;
+  margin: 0 auto;
+  padding: var(--space-24);
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-24);
+  justify-content: center;
+}
+.screen-grid .screen-title { grid-column: 1 / -1; }
+
+/* Tablet: improve card grid and allow 2 columns of phones */
+@media (min-width: 768px) {
+  .home .section .inner { max-width: 680px; }
+  .home .section .cards { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+  .screen-grid {
+    grid-template-columns: repeat(2, minmax(280px, 375px));
+  }
+}
+
+/* Desktop: original 3-up layout with wrapping cards */
+@media (min-width: 1200px) {
+  .home .section .inner { max-width: 960px; }
+  .home .section .cards { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+
+  .screen-grid {
+    grid-template-columns: repeat(3, minmax(280px, 375px));
+  }
+}

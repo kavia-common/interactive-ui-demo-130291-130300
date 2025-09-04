@@ -1,0 +1,4 @@
+{
+    "command": "npm install",
+    "working_directory": "/home/kavia/workspace/code-generation/interactive-ui-demo-130291-130300/sample_app_frontend"
+}
